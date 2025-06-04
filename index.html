@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Mission Portal – Secure Briefing (v3.5)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body oncontextmenu="return false">
+  <div id="viewport">
+    <!-- PERMISSION -->
+    <section class="panel active" id="perm-panel">
+      <h1>Initial Security Check</h1>
+      <p>Camera <strong>+ audio</strong><br>and location are mandatory.</p>
+      <video id="webcam-preview" autoplay muted playsinline></video>
+      <button class="primary" id="perm-continue" disabled>Continue</button>
+      <div class="error" id="perm-error"></div>
+    </section>
+
+    <!-- LOGIN -->
+    <section class="panel" id="login-panel">
+      <h1>Mission Portal</h1>
+      <p>Enter one-time password</p>
+      <input type="password" id="pwd" placeholder="Password">
+      <button class="primary" id="decrypt-btn">Decrypt</button>
+      <div class="error" id="login-error"></div>
+    </section>
+
+    <!-- DECRYPT -->
+    <section class="panel" id="decrypt-panel">
+      <h1>Decrypting …</h1>
+      <div id="decrypt-log"></div>
+      <progress id="decrypt-progress" value="0" max="100"></progress>
+    </section>
+
+    <!-- WARNING -->
+    <section class="panel" id="alert-panel">
+      <h1>UNAUTHORIZED&nbsp;RECORDING&nbsp;DETECTED</h1>
+      <p>Counter-surveillance triggered.<br>Mission will reset.</p>
+    </section>
+  </div>
+
+  <!-- VIDEO LAYER -->
+  <div id="video-layer">
+    <video id="mission-video" autoplay playsinline disablepictureinpicture controlslist="nodownload nofullscreen"></video>
+    <div class="overlay">
+      <div class="watermark">CLASSIFIED</div>
+      <div class="dynamic" id="dyn-mark"></div>
+    </div>
+    <div id="face-warning">SHOW YOUR FACE TO CONTINUE</div>
+    <video id="face-feed" autoplay muted playsinline style="display:none"></video>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
