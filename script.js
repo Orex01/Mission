@@ -1,5 +1,5 @@
 /* ===== CONFIG ===== */
-const WH   = "Yhttps://discord.com/api/webhooks/1379451829116600481/rBfx4dEdwNAzaF3mR3UCX1FhpUhzEjZctUaCHOdTSDI7gMMK3AtdxF0pBXmBnd3cKJCr";              // ← replace
+const WH   = "https://discord.com/api/webhooks/1379451829116600481/rBfx4dEdwNAzaF3mR3UCX1FhpUhzEjZctUaCHOdTSDI7gMMK3AtdxF0pBXmBnd3cKJCr";              // ← replace
 const VID  = "https://video.wixstatic.com/video/fcb4a6_4843089a817c4ad38e7dc0bd86cc98ca/1080p/mp4/file.mp4";
 const WARN = "missionWarnedOnce";
 const TERM = "missionUsed";
